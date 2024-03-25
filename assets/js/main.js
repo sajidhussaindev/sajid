@@ -38,35 +38,7 @@ const shadowHeader = () => {
 }
 window.addEventListener('scroll', shadowHeader)
 
-/*=============== EMAIL JS ===============*/
-const contactForm = document.getElementById('contact-form'),
-    contactMessage = document.getElementById('contact-message')
-
-const sendEmail = (e) => {
-    e.preventDefault()
-
-    // serviceID - templateID - #form - publicKey
-    emailjs.sendForm('service_wp9i7ao', 'template_pjjd7ij', '#contact-form', 'CgfqHwau_gYXsBIMJ')
-        .then(() => {
-            // Show sent message
-            contactMessage.textContent = 'Message sent successfully ✅'
-
-            // Remove message after five seconds
-            setTimeout(() => {
-                contactMessage.textContent = ''
-            }, 5000)
-
-            // Clear input fields
-            contactForm.reset()
-
-        }, () => {
-            // Show error message
-            contactMessage.textContent = 'Error sending the message 🚨'
-        })
-
-}
-
-contactForm.addEventListener('submit', sendEmail)
+//
 
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
